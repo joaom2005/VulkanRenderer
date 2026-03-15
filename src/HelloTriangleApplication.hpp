@@ -7,9 +7,13 @@ import vulkan_hpp;
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#include <iostream>
-#include <stdexcept>
+#include <algorithm>
 #include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <vector>
 
 class HelloTriangleApplication {
 public:
@@ -18,8 +22,9 @@ public:
 private:
     GLFWwindow* window;
 
-    vk::raii::Context  context;
-    vk::raii::Instance instance = nullptr;
+    vk::raii::Context                context;
+    vk::raii::Instance               instance       = nullptr;
+    vk::raii::DebugUtilsMessengerEXT debugMessenger = nullptr;
 
 private:
     void initWindow();
