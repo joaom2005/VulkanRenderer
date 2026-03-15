@@ -39,3 +39,9 @@
 
 # debug information files
 *.dwo
+
+# Build Dir
+/out/
+
+# Visual Studio Files
+/.vs/
